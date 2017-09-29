@@ -16,11 +16,14 @@ public class PlayerController : MonoBehaviour
     public bool shouldZoomIn = false;
     public bool shouldZoomOut = false;
 
+    //private GameObject endLine;
+
 	// Use this for initialization
-	void Start ()
-	{
-	    rBody = this.GetComponent<Rigidbody2D>();
-	}
+    void Start()
+    {
+        rBody = this.GetComponent<Rigidbody2D>();
+        //endLine = GameObject.Find("EndLine");
+    }
 
     void Update()
     {
@@ -73,12 +76,13 @@ public class PlayerController : MonoBehaviour
 
     void ZoomIn()
     {
-        if (Camera.main.orthographicSize > 5f)
+        //var distance = Vector3.Distance(rBody.transform.position, endLine.transform.position);
+        if (Camera.main.orthographicSize > 1f)
         {
             Camera.main.orthographicSize =
-                Mathf.Lerp(Camera.main.orthographicSize, Camera.main.orthographicSize + -increment, timeLerp * Time.deltaTime);
+                Mathf.Lerp(Camera.main.orthographicSize, Camera.main.orthographicSize -(increment), timeLerp * Time.deltaTime);
         }
-        else if (Camera.main.orthographicSize < 5f)
+        else if (Camera.main.orthographicSize < 1f)
         {
             shouldZoomIn = false;
         }
