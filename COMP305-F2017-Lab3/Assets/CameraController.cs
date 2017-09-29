@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
 
     public Transform playerPosition;
-
+    
     private Transform camTrans;
 
 	// Use this for initialization
