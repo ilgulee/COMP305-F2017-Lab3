@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "ZoomInTrigger")
         {
             shouldZoomIn = true;
+
         }
         else if(col.gameObject.tag == "ZoomOutTrigger")
         {
